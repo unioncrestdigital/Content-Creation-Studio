@@ -355,7 +355,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 className="absolute top-3 left-3"
                 live
                 label="Generated footage"
-                detail="1080p · 24fps"
+                detail="Ten seconds, on a loop"
               />
 
               <div className="absolute bottom-3 right-3 flex items-center gap-2 z-10">
