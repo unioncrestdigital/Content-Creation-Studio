@@ -47,7 +47,7 @@ export const ExportModal: React.FC<ExportModalProps> = ({
           setIsExporting(false);
           setDownloadReady(true);
           // Use the primary clip media or high-res image as real downloadable media
-          setDownloadUrl(clips[0]?.mediaUrl || '/src/assets/images/ref_cyber_cinematic_1793384810139.jpg');
+          setDownloadUrl(clips[0]?.mediaUrl || '/assets/images/ref_cyber_cinematic_1793384810139.jpg');
           return 100;
         }
         return prev + 20;

@@ -3,20 +3,20 @@ import { VideoClip } from '../utils/studioEngine';
 
 // Real high-fidelity generated images & stock media
 export const GENERATED_ASSETS = {
-  cyberCinematic: '/src/assets/images/ref_cyber_cinematic_1793384810139.jpg',
-  fashionPortrait: '/src/assets/images/ref_fashion_portrait_1793384811257.jpg',
-  droneCityscape: '/src/assets/images/stock_drone_cityscape_1793384811395.jpg',
-  natureWaterfall: '/src/assets/images/stock_nature_waterfall_1793384811774.jpg',
-  rawGoldenGate: '/src/assets/images/raw_golden_gate_fog_1793391121469.jpg',
-  sportsBasketball: '/src/assets/images/stock_sports_basketball_1793391135017.jpg',
+  cyberCinematic: '/assets/images/ref_cyber_cinematic_1793384810139.jpg',
+  fashionPortrait: '/assets/images/ref_fashion_portrait_1793384811257.jpg',
+  droneCityscape: '/assets/images/stock_drone_cityscape_1793384811395.jpg',
+  natureWaterfall: '/assets/images/stock_nature_waterfall_1793384811774.jpg',
+  rawGoldenGate: '/assets/images/raw_golden_gate_fog_1793391121469.jpg',
+  sportsBasketball: '/assets/images/stock_sports_basketball_1793391135017.jpg',
   // Real public domain / open source video clips
-  realStockVideoLandmark: '/src/assets/videos/real_stock_landmark.mp4',
+  realStockVideoLandmark: '/assets/videos/real_stock_landmark.mp4',
   realStockYoutubeUrl: 'https://youtu.be/TEjHDF9QXTY?si=jYkPrxhuZ_ULXgVl',
   realStockYoutubeId: 'TEjHDF9QXTY',
   realStockYoutubeEmbed: 'https://www.youtube-nocookie.com/embed/TEjHDF9QXTY?autoplay=1&mute=1&loop=1&playlist=TEjHDF9QXTY&controls=1&rel=0&modestbranding=1&playsinline=1',
   realStockVideoSports: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
-  aiDroneForwardVideo: '/src/assets/videos/ai_drone_forward_flythrough.mp4',
-  tripVlogCutVideo: '/src/assets/videos/trip_vlog_cut.mp4',
+  aiDroneForwardVideo: '/assets/videos/ai_drone_forward_flythrough.mp4',
+  tripVlogCutVideo: '/assets/videos/trip_vlog_cut.mp4',
 };
 
 // Initial project timeline clips
