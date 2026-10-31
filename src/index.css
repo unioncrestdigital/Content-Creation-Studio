@@ -40,3 +40,20 @@ body.dark ::-webkit-scrollbar-track {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(100, 116, 139, 0.7);
 }
+
+/* Type rules from the Hallmark craft reference, applied globally rather than
+   per component so nothing has to remember them.
+   - balance on heads so none ends on a stub word
+   - pretty on body so no paragraph ends on one word
+   - tabular figures wherever numbers are compared down a column */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p, li {
+  text-wrap: pretty;
+}
+
+.tabular, [data-figure] {
+  font-variant-numeric: tabular-nums;
+}

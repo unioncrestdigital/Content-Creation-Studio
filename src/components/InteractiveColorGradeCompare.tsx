@@ -51,13 +51,13 @@ export const InteractiveColorGradeCompare: React.FC<InteractiveColorGradeCompare
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-indigo-600 dark:text-indigo-400">
             <Sliders className="w-3.5 h-3.5" />
-            <span>Hollywood 35mm LUTs & Log Correction</span>
+            <span>Grading</span>
           </div>
           <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-0.5">
             Color Grader
           </h3>
           <p className="text-xs text-slate-600 dark:text-slate-400">
-            Drag the line up or down to compare flat raw stock against professional Hollywood color grading.
+            Drag the line to compare the ungraded stock against the graded result.
           </p>
         </div>
 
@@ -93,9 +93,9 @@ export const InteractiveColorGradeCompare: React.FC<InteractiveColorGradeCompare
             className="w-full h-full object-cover"
           />
           {/* Label in bottom corner */}
-          <div className="absolute bottom-3 left-3 px-2.5 py-1 bg-black/80 backdrop-blur-md rounded-md text-[10px] font-mono text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5">
+          <div className="absolute bottom-3 left-3 inline-flex items-center gap-2 rounded-full bg-slate-950/70 backdrop-blur-md py-1.5 px-3 ring-1 ring-white/15 text-[11px] text-white">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span>PROFESSIONALLY COLOR GRADED ({activeLut.toUpperCase()})</span>
+            <span>Graded<span className="text-white/55"> · {activeLut}</span></span>
           </div>
         </div>
 
@@ -115,9 +115,9 @@ export const InteractiveColorGradeCompare: React.FC<InteractiveColorGradeCompare
             }}
           />
           {/* Label in top corner */}
-          <div className="absolute top-3 left-3 px-2.5 py-1 bg-black/80 backdrop-blur-md rounded-md text-[10px] font-mono text-amber-300 border border-amber-500/30 flex items-center gap-1.5">
+          <div className="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-slate-950/70 backdrop-blur-md py-1.5 px-3 ring-1 ring-white/15 text-[11px] text-white/80">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-            <span>RAW STOCK (UNCORRECTED / FLAT LOG)</span>
+            <span>Raw, ungraded</span>
           </div>
         </div>
 
@@ -131,9 +131,9 @@ export const InteractiveColorGradeCompare: React.FC<InteractiveColorGradeCompare
           <div className="w-full h-0.5 bg-gradient-to-r from-indigo-500 via-white to-indigo-500 shadow-md shadow-white/50" />
 
           {/* Central Handle Pill */}
-          <div className="absolute px-3 py-1 bg-slate-900/90 border border-indigo-400 text-white rounded-full shadow-lg flex items-center gap-1.5 text-[10px] font-mono">
+          <div className="absolute px-3 py-1 bg-slate-900/90 border border-indigo-400 text-white rounded-full shadow-sm flex items-center gap-1.5 text-[11px] font-medium">
             <ArrowUpDown className="w-3 h-3 text-indigo-400" />
-            <span>DRAG LINE</span>
+            <span>Drag</span>
           </div>
         </div>
       </div>
@@ -141,8 +141,8 @@ export const InteractiveColorGradeCompare: React.FC<InteractiveColorGradeCompare
       {/* Footer Info & 1-Click Launch Button */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs pt-1">
         <span className="text-slate-600 dark:text-slate-400">
-          Showing <span className="text-slate-900 dark:text-slate-200 font-mono font-medium">{splitPos.toFixed(0)}%</span> Raw vs{' '}
-          <span className="text-indigo-600 dark:text-indigo-300 font-mono font-medium">{(100 - splitPos).toFixed(0)}%</span> Color Graded.
+          Showing <span className="text-slate-900 dark:text-slate-200 font-medium tabular-nums">{splitPos.toFixed(0)}%</span> Raw vs{' '}
+          <span className="text-indigo-600 dark:text-indigo-300 font-medium tabular-nums">{(100 - splitPos).toFixed(0)}%</span> Color Graded.
         </span>
 
         <button

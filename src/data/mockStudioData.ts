@@ -10,8 +10,12 @@ export const GENERATED_ASSETS = {
   rawGoldenGate: '/assets/images/raw_golden_gate_fog_1793391121469.jpg',
   sportsBasketball: '/assets/images/stock_sports_basketball_1793391135017.jpg',
   // Real public domain / open source video clips
-  realStockVideoLandmark: '/assets/videos/real_stock_landmark.mp4',
-  aiDroneForwardVideo: '/assets/videos/ai_drone_forward_flythrough.mp4',
+  // Ten-second cuts, downloaded and bundled rather than embedded. Sources are
+  // credited in the README; nothing here is fetched at runtime.
+  //   stock      youtu.be/TEjHDF9QXTY   0:00-0:10
+  //   generated  youtu.be/kL2jYOkB9UQ   0:45-0:55
+  realStockVideoLandmark: '/assets/videos/stock_nyc_night_drone.mp4',
+  aiDroneForwardVideo: '/assets/videos/ai_generated_mountains.mp4',
   tripVlogCutVideo: '/assets/videos/trip_vlog_cut.mp4',
 };
 
@@ -110,20 +114,20 @@ export const INITIAL_REFERENCE_ASSETS: ReferenceAsset[] = [
 // Curated stock library ready to search & insert into timeline
 export const STOCK_FOOTAGE_LIBRARY: StockFootageItem[] = [
   {
-    id: 'stock-landmark-4k',
-    title: '4K Landmark Flyover',
+    id: 'stock-nyc-night',
+    title: 'New York at Night, Aerial',
     // Was a YouTube entry whose videoUrl pointed at youtu.be and whose
     // thumbnail loaded from img.youtube.com. Both are now the copies this
     // repository already ships, so the browser makes no external request.
     platform: 'Community CC',
     duration: 10.0,
     orientation: 'horizontal',
-    category: 'Nature',
+    category: 'Urban',
     videoUrl: GENERATED_ASSETS.realStockVideoLandmark,
     thumbnailUrl: GENERATED_ASSETS.rawGoldenGate,
     author: 'Bundled sample footage',
     license: 'Sample asset shipped with this repository',
-    tags: ['usa', '4k', 'landmarks', 'nature', 'aerial', 'cinematic'],
+    tags: ['new york', 'night', 'aerial', 'urban', 'cinematic'],
   },
   {
     id: 'stock-yt-1',

@@ -71,11 +71,11 @@ export const StudioHeader: React.FC<StudioHeaderProps> = ({
                 Content Creation Studio
               </span>
               <span
-                className={`text-[10px] font-mono ${
-                  isLight ? 'text-indigo-600' : 'text-indigo-400'
+                className={`text-[11px] ${
+                  isLight ? 'text-slate-500' : 'text-slate-400'
                 }`}
               >
-                AI Video · Photo · Social Studio
+                Video, photo and social
               </span>
             </div>
           </button>

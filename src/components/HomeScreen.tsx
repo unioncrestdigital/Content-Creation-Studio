@@ -114,7 +114,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
           </h1>
         </div>
         <p className="text-sm text-slate-600 dark:text-slate-400">
-          Neural AI video generation, professional color grading, real stock footage, and direct social distribution.
+          Generate video, grade it, cut it to the right shape, and schedule it. One place, no handoffs.
         </p>
       </div>
 
@@ -234,10 +234,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
             <div>
               <div className="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
-                <span>Studio Capabilities & Feature Showcases</span>
+                <span>What it does</span>
               </div>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Explore real-time demonstrations of Hollywood color grading, authentic 4K stock video, neural AI synthesis, and smart transitions.
+                Four things, each running on this page rather than described: grading, stock, generation, and cutting.
               </p>
             </div>
           </div>
@@ -292,8 +292,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               <MediaLabel
                 className="absolute top-3 left-3"
                 live
-                label="4K cinematic stock"
-                detail="Bundled with the app"
+                label="Stock footage"
+                detail="New York at night"
               />
             </div>
             {/* Clean bottom action row (Replaced old categories with direct Add callout) */}
@@ -307,7 +307,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <span>Add High-Quality Stock Footage</span>
               </button>
               <span className="text-emerald-700 dark:text-emerald-400 font-mono text-[11px]">
-                Royalty-free 4K, bundled with the app. No third-party player, no external request.
+                Bundled with the app. No third-party player and no external request.
               </span>
             </div>
           </div>
@@ -318,13 +318,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               <div>
                 <div className="flex items-center gap-2 text-xs font-semibold text-indigo-600 dark:text-indigo-400">
                   <Video className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
-                  <span>Neural Latent Diffusion & Continuous Camera Flight</span>
+                  <span>Generation</span>
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-0.5">
                   AI Video Generator
                 </h3>
                 <p className="text-xs text-slate-600 dark:text-slate-400 max-w-2xl">
-                  Real generated video moving forward as a TV background drone shot through a futuristic cyber street. Starts playing automatically when you scroll down to see it.
+                  Ten seconds of generated footage, played from a file this app ships rather than streamed. It starts when it scrolls into view.
                 </p>
               </div>
 
@@ -354,8 +354,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               <MediaLabel
                 className="absolute top-3 left-3"
                 live
-                label="Generated drone shot"
-                detail="4K · 60fps"
+                label="Generated footage"
+                detail="1080p · 24fps"
               />
 
               <div className="absolute bottom-3 right-3 flex items-center gap-2 z-10">
@@ -374,10 +374,10 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                     cyan monospace. The quotation marks went with it: the title
                     is a caption, not something anyone said. */}
                 <div className="text-[15px] font-semibold tracking-tight text-white">
-                  Cinematic coastal city drone flight
+                  Generated mountain flyover
                 </div>
                 <div className="mt-0.5 text-[12px] text-white/55">
-                  Dolly forward · Plays when it scrolls into view
+                  Ten-second cut · Plays when it scrolls into view
                 </div>
               </div>
             </div>

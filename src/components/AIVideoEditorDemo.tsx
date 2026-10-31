@@ -84,7 +84,7 @@ export const AIVideoEditorDemo: React.FC<AIVideoEditorDemoProps> = ({ onOpenTime
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-indigo-600 dark:text-indigo-400">
             <Smartphone className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
-            <span>Smart Timeline Automation & Fast-Cut Pacing</span>
+            <span>Cutting</span>
           </div>
           <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-0.5">
             AI Video Editor
@@ -134,7 +134,7 @@ export const AIVideoEditorDemo: React.FC<AIVideoEditorDemoProps> = ({ onOpenTime
               className="p-2 rounded-full bg-black/80 hover:bg-black text-white border border-white/20 transition-colors cursor-pointer"
               title={isMuted ? 'Unmute video audio' : 'Mute video audio'}
             >
-              {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-cyan-400" />}
+              {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
             </button>
             <button
               type="button"
@@ -168,7 +168,7 @@ export const AIVideoEditorDemo: React.FC<AIVideoEditorDemoProps> = ({ onOpenTime
             {/* Video Progress Line */}
             <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-indigo-500 to-cyan-400 transition-all duration-100"
+                className="h-full bg-indigo-500 transition-all duration-100"
                 style={{ width: `${(currentTime / (duration || 1)) * 100}%` }}
               />
             </div>
@@ -200,7 +200,7 @@ export const AIVideoEditorDemo: React.FC<AIVideoEditorDemoProps> = ({ onOpenTime
 
         <div className="p-3 bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 rounded-xl space-y-1 shadow-2xs">
           <div className="flex items-center gap-2 text-xs font-semibold text-slate-900 dark:text-white">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+            <Sparkles className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
             <span>Intelligent Transitions</span>
           </div>
           <p className="text-[11px] text-slate-600 dark:text-slate-400">
