@@ -138,22 +138,6 @@ client build closes.
   both now say what is actually here. The `@google/genai` dependency and
   seven others that were declared and never imported are gone.
 
-## Footage
-
-Two ten-second cuts are bundled rather than embedded, so the app makes no
-external request. Both were trimmed from their sources and are credited here:
-
-| Clip | Source | Cut |
-| --- | --- | --- |
-| Generation | [youtu.be/kL2jYOkB9UQ](https://youtu.be/kL2jYOkB9UQ), SmartFunAI | 0:45–0:55 |
-| Stock | [youtu.be/TEjHDF9QXTY](https://youtu.be/TEjHDF9QXTY), Hd & 4k Stock Videos | 0:00–0:10 |
-
-Neither video's metadata declares a Creative Commons licence; the second
-channel asserts "no copyright" in its own title, which is the uploader's claim
-rather than a licence grant. They are here as placeholder footage for a
-structural reference. A client build should replace them with material it has
-cleared.
-
 ## Licence
 
 No licence is granted. This repository is published so the architecture can be
