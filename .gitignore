@@ -6,3 +6,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# AI Studio scratch. Generated media and session state, not source.
+.aistudio/

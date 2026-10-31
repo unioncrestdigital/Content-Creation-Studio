@@ -1,6 +1,5 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
-import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
@@ -8,7 +7,9 @@ export default defineConfig(() => {
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        // import.meta.dirname, not __dirname: this config is ESM and Vite 8
+        // warns that __dirname does not exist in a native-ESM config.
+        '@': import.meta.dirname,
       },
     },
     server: {
