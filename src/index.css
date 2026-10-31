@@ -57,3 +57,33 @@ p, li {
 .tabular, [data-figure] {
   font-variant-numeric: tabular-nums;
 }
+
+/* The accent.
+ *
+ * Tailwind's indigo sits around hue 264, a purple-blue. The Hallmark craft
+ * reference bans purple-blue outright (2a), and it is the colour every
+ * generated interface reaches for, which is exactly why it reads as one.
+ *
+ * This is the same ramp at hue 252: still unmistakably blue, with enough red
+ * in it to look chosen rather than defaulted. Declared in OKLCH, as the craft
+ * reference requires, and overriding the palette here rather than editing 249
+ * class names across 14 files, so there is one source for it.
+ *
+ * Gates, computed rather than eyeballed:
+ *   white on 600          5.89:1   (body minimum 4.5)
+ *   600 on the page       5.53:1
+ *   400 on the dark bg    7.21:1
+ */
+@theme {
+  --color-indigo-50: oklch(97.1% 0.011 252);
+  --color-indigo-100: oklch(94.1% 0.024 252);
+  --color-indigo-200: oklch(88.6% 0.047 252);
+  --color-indigo-300: oklch(80.0% 0.078 252);
+  --color-indigo-400: oklch(69.2% 0.112 252);
+  --color-indigo-500: oklch(59.2% 0.133 252);
+  --color-indigo-600: oklch(50.5% 0.140 252);
+  --color-indigo-700: oklch(43.0% 0.126 252);
+  --color-indigo-800: oklch(36.2% 0.101 252);
+  --color-indigo-900: oklch(30.5% 0.077 252);
+  --color-indigo-950: oklch(21.2% 0.051 252);
+}
