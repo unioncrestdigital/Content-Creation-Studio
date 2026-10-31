@@ -1,0 +1,6 @@
+{
+  "name": "Content Creation Studio",
+  "description": "Clean, ultra-intuitive AI content creation studio. Generate videos, edit photos with professional Hollywood color grading, remix real stock footage and YouTube CC, apply intelligent scene transitions, and schedule or publish directly to TikTok, Reels, and Shorts with cross-platform analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
