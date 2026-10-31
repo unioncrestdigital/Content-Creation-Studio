@@ -253,13 +253,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               <div>
                 <div className="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
                   <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                  <span>Real Stock Video (Not AI Generated) · B-Roll & Landing Page Backdrops</span>
+                  <span>Stock</span>
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-0.5">
-                  Real 4K Cinematic Stock Video
+                  Stock footage
                 </h3>
                 <p className="text-xs text-slate-600 dark:text-slate-400 max-w-2xl">
-                  Authentic high-definition footage pulled directly for cinematic B-roll, background layers, and landing page backdrops to remix with your raw camera uploads. Autoplays when scrolled into view.
+                  Clips to cut against your own footage. This one ships with the app and starts when it scrolls into view.
                 </p>
               </div>
 
@@ -306,7 +306,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add High-Quality Stock Footage</span>
               </button>
-              <span className="text-emerald-700 dark:text-emerald-400 font-mono text-[11px]">
+              <span className="text-slate-500 dark:text-slate-400 text-[12px]">
                 Bundled with the app. No third-party player and no external request.
               </span>
             </div>

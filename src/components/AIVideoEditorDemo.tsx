@@ -184,7 +184,7 @@ export const AIVideoEditorDemo: React.FC<AIVideoEditorDemoProps> = ({ onOpenTime
             <span>Direct Phone Uploads</span>
           </div>
           <p className="text-[11px] text-slate-600 dark:text-slate-400">
-            Ingest raw 4K 60fps files straight from your iPhone or Android camera roll with zero transcoding latency.
+            Takes the file straight off the camera roll, no conversion step.
           </p>
         </div>
 
