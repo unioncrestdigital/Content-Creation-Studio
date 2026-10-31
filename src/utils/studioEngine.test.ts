@@ -1,5 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+// VideoClip is an interface, so it has to come in as a type import. Node
+// strips types rather than compiling them, so a type sitting in the value
+// list is a named export that does not exist at runtime: this file threw
+// SyntaxError before a single assertion ran.
+import type { VideoClip } from './studioEngine.ts';
 import {
   analyzeSceneTransition,
   calculateTimelineDuration,
@@ -9,7 +14,6 @@ import {
   getPeakEngagementTimes,
   formatMetricCount,
   DEFAULT_COLOR_GRADE,
-  VideoClip,
   parseCreationIntent,
 } from './studioEngine.ts';
 
