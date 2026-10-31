@@ -14,7 +14,6 @@ import { StockFootageBrowser } from './components/StockFootageBrowser';
 import { SocialScheduler } from './components/SocialScheduler';
 import { AnalyticsDashboard } from './components/AnalyticsDashboard';
 import { ExportModal } from './components/ExportModal';
-import { WhatsAppModal } from './components/WhatsAppModal';
 
 import {
   INITIAL_CLIPS,
@@ -24,7 +23,9 @@ import { VideoClip, AspectRatioType, ColorGradeSettings } from './utils/studioEn
 import { ReferenceAsset } from './types/studio';
 
 export default function App() {
-  // Theme state: defaults to 'light' as requested by the user
+  // Theme is read from storage but no longer switchable from the UI:
+  // the toggle was removed. Kept as state so every isLight branch in the
+  // tree still has a value, and so a stored preference is honoured.
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
     const saved = localStorage.getItem('app_theme');
     return saved === 'dark' ? 'dark' : 'light';
@@ -35,7 +36,6 @@ export default function App() {
   const [referenceAssets, setReferenceAssets] = useState<ReferenceAsset[]>(INITIAL_REFERENCE_ASSETS);
   const [aspectRatio, setAspectRatio] = useState<AspectRatioType>('9:16');
   const [isExportOpen, setIsExportOpen] = useState(false);
-  const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
 
   // Quick prompt & attachment state passed into Conversational Creator
   const [creatorPrompt, setCreatorPrompt] = useState<string>('');
@@ -61,9 +61,6 @@ export default function App() {
     }
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-  };
 
   // Add clip from AI generator, conversational creator, or stock hub
   const handleAddClipToTimeline = (newClip: VideoClip) => {
@@ -111,9 +108,7 @@ export default function App() {
         setAspectRatio={setAspectRatio}
         onOpenExport={() => setIsExportOpen(true)}
         onOpenSocialPost={() => setActiveTab('social-schedule')}
-        onOpenWhatsApp={() => setIsWhatsAppOpen(true)}
         theme={theme}
-        onToggleTheme={toggleTheme}
       />
 
       {/* Main Content Workspace */}
@@ -206,13 +201,6 @@ export default function App() {
         aspectRatio={aspectRatio}
       />
 
-      {/* WhatsApp Direct Share Modal */}
-      <WhatsAppModal
-        isOpen={isWhatsAppOpen}
-        onClose={() => setIsWhatsAppOpen(false)}
-        activeClip={clips[0]}
-        aspectRatio={aspectRatio}
-      />
 
       {/* Footer conforming to anti-slop guidelines */}
       <footer

@@ -9,3 +9,10 @@ coverage/
 
 # AI Studio scratch. Generated media and session state, not source.
 .aistudio/
+
+# Local editor/agent config, per machine.
+.claude/
+
+# Installed agent skills, per machine.
+.agents/
+skills-lock.json

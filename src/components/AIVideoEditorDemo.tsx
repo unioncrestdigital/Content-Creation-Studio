@@ -13,6 +13,7 @@ import {
   Layers,
 } from 'lucide-react';
 import { GENERATED_ASSETS } from '../data/mockStudioData';
+import { MediaLabel } from './MediaLabel';
 
 interface AIVideoEditorDemoProps {
   onOpenTimeline: () => void;
@@ -119,13 +120,12 @@ export const AIVideoEditorDemo: React.FC<AIVideoEditorDemoProps> = ({ onOpenTime
             className="w-full h-full object-cover"
           />
 
-          {/* Overlaid Badges */}
-          <div className="absolute top-3 left-3 flex items-center gap-2">
-            <div className="px-3 py-1 bg-black/80 backdrop-blur-md rounded-md text-[10px] font-mono text-cyan-300 border border-cyan-500/30 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-              <span>AI AUTO-EDITED TRIP VLOG · FAST CUTS & TRANSITIONS</span>
-            </div>
-          </div>
+          <MediaLabel
+            className="absolute top-3 left-3"
+            live
+            label="Auto-edited trip vlog"
+            detail="Fast cuts and transitions"
+          />
 
           <div className="absolute top-3 right-3 flex items-center gap-1.5">
             <button
@@ -148,12 +148,19 @@ export const AIVideoEditorDemo: React.FC<AIVideoEditorDemoProps> = ({ onOpenTime
 
           {/* Bottom Bar: Pacing Details & Scrubber */}
           <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-4 pt-8">
-            <div className="flex items-center justify-between text-xs font-bold text-white mb-2">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                <span>Trip Highlights Montage: Auto Pacing & Dynamic Whip-Pan Transitions</span>
+            <div className="flex items-center justify-between gap-3 mb-2">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
+                <span className="text-[13px] font-medium text-white truncate">
+                  Trip highlights montage
+                </span>
+                <span className="hidden sm:inline text-[12px] text-white/55 truncate">
+                  Auto pacing, whip-pan transitions
+                </span>
               </div>
-              <span className="text-[11px] font-mono text-slate-300">
+              {/* font-mono stays here on purpose: a timecode that ticks every
+                  frame jitters in a proportional face. */}
+              <span className="text-[11px] font-mono tabular-nums text-white/70 shrink-0">
                 {currentTime.toFixed(1)}s / {duration.toFixed(1)}s
               </span>
             </div>

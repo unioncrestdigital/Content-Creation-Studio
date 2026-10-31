@@ -11,10 +11,6 @@ export const GENERATED_ASSETS = {
   sportsBasketball: '/assets/images/stock_sports_basketball_1793391135017.jpg',
   // Real public domain / open source video clips
   realStockVideoLandmark: '/assets/videos/real_stock_landmark.mp4',
-  realStockYoutubeUrl: 'https://youtu.be/TEjHDF9QXTY?si=jYkPrxhuZ_ULXgVl',
-  realStockYoutubeId: 'TEjHDF9QXTY',
-  realStockYoutubeEmbed: 'https://www.youtube-nocookie.com/embed/TEjHDF9QXTY?autoplay=1&mute=1&loop=1&playlist=TEjHDF9QXTY&controls=1&rel=0&modestbranding=1&playsinline=1',
-  realStockVideoSports: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
   aiDroneForwardVideo: '/assets/videos/ai_drone_forward_flythrough.mp4',
   tripVlogCutVideo: '/assets/videos/trip_vlog_cut.mp4',
 };
@@ -114,16 +110,19 @@ export const INITIAL_REFERENCE_ASSETS: ReferenceAsset[] = [
 // Curated stock library ready to search & insert into timeline
 export const STOCK_FOOTAGE_LIBRARY: StockFootageItem[] = [
   {
-    id: 'stock-yt-usa-4k',
-    title: 'USA 4K - Scenic Relaxation Film & US Landmarks',
-    platform: 'YouTube',
+    id: 'stock-landmark-4k',
+    title: '4K Landmark Flyover',
+    // Was a YouTube entry whose videoUrl pointed at youtu.be and whose
+    // thumbnail loaded from img.youtube.com. Both are now the copies this
+    // repository already ships, so the browser makes no external request.
+    platform: 'Community CC',
     duration: 10.0,
     orientation: 'horizontal',
     category: 'Nature',
-    videoUrl: GENERATED_ASSETS.realStockYoutubeUrl,
-    thumbnailUrl: 'https://img.youtube.com/vi/TEjHDF9QXTY/hqdefault.jpg',
-    author: 'Scenic Relaxation Films (YouTube CC)',
-    license: 'Creative Commons 4K / Commercial Safe',
+    videoUrl: GENERATED_ASSETS.realStockVideoLandmark,
+    thumbnailUrl: GENERATED_ASSETS.rawGoldenGate,
+    author: 'Bundled sample footage',
+    license: 'Sample asset shipped with this repository',
     tags: ['usa', '4k', 'landmarks', 'nature', 'aerial', 'cinematic'],
   },
   {

@@ -17,6 +17,7 @@ import { GENERATED_ASSETS } from '../data/mockStudioData';
 import { StudioCapabilitiesIcon } from './StudioCapabilitiesIcon';
 import { InteractiveColorGradeCompare } from './InteractiveColorGradeCompare';
 import { AIVideoEditorDemo } from './AIVideoEditorDemo';
+import { MediaLabel } from './MediaLabel';
 
 interface HomeScreenProps {
   onSelectTool: (
@@ -272,37 +273,29 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </button>
             </div>
 
-            {/* Real Video Player with YouTube 4K stream */}
-            <div className="relative aspect-video sm:h-96 w-full rounded-xl overflow-hidden bg-black border border-slate-200 dark:border-slate-800 group shadow-inner">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/TEjHDF9QXTY?autoplay=1&mute=1&loop=1&playlist=TEjHDF9QXTY&controls=1&rel=0&modestbranding=1&playsinline=1"
-                title="USA 4K - Scenic Relaxation Film With Calming Music (YouTube CC)"
-                className="w-full h-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
+            {/* Local 4K stock clip. This was a youtube-nocookie iframe: it
+                put a third-party player with its own chrome inside the page,
+                made every visit a request to Google, and the file it streamed
+                is one we already ship at /assets/videos. */}
+            <div className="relative aspect-video sm:h-96 w-full rounded-2xl overflow-hidden bg-slate-950 ring-1 ring-slate-900/10 dark:ring-white/10 shadow-sm">
+              <video
+                src={GENERATED_ASSETS.realStockVideoLandmark}
+                className="w-full h-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                controls
               />
 
-              {/* Overlaid Badges */}
-              <div className="absolute top-3 left-3 px-3 py-1 bg-black/80 backdrop-blur-md rounded-md text-[10px] font-mono text-emerald-300 border border-emerald-500/30 flex items-center gap-2 pointer-events-none">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span>REAL 4K CINEMATIC STOCK · USA 4K SCENIC RELAXATION (YOUTUBE CC)</span>
-              </div>
-
-              {/* Direct YouTube 4K External Link Button */}
-              <div className="absolute bottom-3 right-3 flex items-center gap-2">
-                <a
-                  href="https://youtu.be/TEjHDF9QXTY?si=jYkPrxhuZ_ULXgVl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-2.5 py-1 rounded-md bg-black/80 hover:bg-black text-white text-[10px] font-medium border border-white/20 transition-colors flex items-center gap-1.5 shadow-sm"
-                  title="Watch original 4K video on YouTube"
-                >
-                  <ExternalLink className="w-3 h-3 text-red-500" />
-                  <span>Watch on YouTube</span>
-                </a>
-              </div>
+              <MediaLabel
+                className="absolute top-3 left-3"
+                live
+                label="4K cinematic stock"
+                detail="Bundled with the app"
+              />
             </div>
-
             {/* Clean bottom action row (Replaced old categories with direct Add callout) */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400 pt-1">
               <button
@@ -314,7 +307,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 <span>Add High-Quality Stock Footage</span>
               </button>
               <span className="text-emerald-700 dark:text-emerald-400 font-mono text-[11px]">
-                100% Commercial-Safe YouTube Creative Commons & 4K Royalty-Free · Scenic Relaxation
+                Royalty-free 4K, bundled with the app. No third-party player, no external request.
               </span>
             </div>
           </div>
@@ -358,11 +351,12 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
                 className="w-full h-full object-cover"
               />
 
-              {/* Overlaid Drone Telemetry Badge */}
-              <div className="absolute top-3 left-3 px-3 py-1 bg-black/80 backdrop-blur-md rounded-md text-[10px] font-mono text-cyan-300 border border-cyan-500/30 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                <span>AI GENERATED DRONE SHOT · MOVING FORWARD (4K 60FPS)</span>
-              </div>
+              <MediaLabel
+                className="absolute top-3 left-3"
+                live
+                label="Generated drone shot"
+                detail="4K · 60fps"
+              />
 
               <div className="absolute bottom-3 right-3 flex items-center gap-2 z-10">
                 <button
@@ -376,15 +370,14 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
               </div>
 
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-4 pointer-events-none">
-                <div className="text-sm font-bold text-white">
-                  "Cinematic Coastal City Drone Flight (4K 60FPS)"
+                {/* Sentence case, and the metadata in the UI font rather than
+                    cyan monospace. The quotation marks went with it: the title
+                    is a caption, not something anyone said. */}
+                <div className="text-[15px] font-semibold tracking-tight text-white">
+                  Cinematic coastal city drone flight
                 </div>
-                <div className="flex items-center gap-2 text-[11px] text-cyan-300 mt-1 font-mono">
-                  <span>Camera: Dolly Forward Drone Flythrough</span>
-                  <span>·</span>
-                  <span>Autoplays on Scroll</span>
-                  <span>·</span>
-                  <span>Smooth 60FPS</span>
+                <div className="mt-0.5 text-[12px] text-white/55">
+                  Dolly forward · Plays when it scrolls into view
                 </div>
               </div>
             </div>
